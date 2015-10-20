@@ -1,0 +1,54 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/
+
+Route::get('/', function () {
+    return view::make('first_view');
+});
+
+
+Route::get('laptops/{brand?}',function($brand='HP'){
+	//if ($brand==null)return 'all brands are good!!';
+	 return "{$brand} is a good laptop";
+
+/*return '<!doctype html>
+            <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <title>Alright!</title>
+                </head>
+                <body>
+                    <?php if ($brand == null): ?>
+			HP
+		<?php else: ?>
+		
+                </body>
+            </html>';*/
+
+});
+$logic = function(){
+	return 'NYT';
+	};
+
+Route::get('my/page', $logic) ;
+
+Route::get('framgia',function(){
+
+	return 'Framgia Bangladesh';
+});
+
+/*
+Route::get('laptops/{brand?}',function($brand=null){
+	if ($brand==null)return 'all brands are good!!';
+	 return "{$brand} is a good laptop";
+
+});*/
